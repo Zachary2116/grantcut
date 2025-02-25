@@ -1,0 +1,300 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba(255, 255, 255, 0);
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+#root {
+  width: 100%;
+   margin: 0 auto;
+   padding:0rem;
+   text-align: center;
+ }
+ 
+ 
+ .card {
+   padding: 0em;
+ }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.read-the-docs {
+  color: #888;
+}
+.hero-section {
+  position: relative;
+  z-index: 1; /* Ensure it appears above any other background */
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+body, html {
+  padding: 0;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 100% !important;
+  width: auto !important;
+}
+.card {
+  margin-top: 1rem;
+}
+
+.content {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+/* Ensure the hero-section spans the full width */
+.hero-section {
+  /* Adjust path if needed */
+  min-height: 120vh; /* Ensure the section is at least full viewport height */
+  width:100%;
+  background-attachment: fixed;
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  color: white; /* Text color for readability */
+  text-align: center; /* Center text horizontally */
+  padding: 2rem 0; /* Add some vertical padding */
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow below the section */
+}
+.footer {
+  background:fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #000000;
+  color: #ffffff; /* Black text */
+  font-family: Arial, sans-serif;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.footer-left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-left p {
+  margin-bottom: 1.5rem;
+}
+
+.email-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.email-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  font-size: 1rem;
+}
+
+.email-button {
+  background-color: #cecb2fe1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.email-button:hover {
+  background-color: #ffea00;
+}
+
+.footer-middle h4,
+.footer-right h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-middle ul,
+.footer-right .social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-middle a,
+.footer-right a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-middle a:hover,
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.logo {
+  height: 15em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo {
+  filter: drop-shadow(0 0 5em #d3ab0baa);
+}
+
+.nav {
+  position: fixed; /* Sticks the navbar to the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Makes the navbar span the full width of the page */
+  height: 100px; /* Adjust height as needed */
+  background-color: #e7a85500; /* Set your desired background color */
+  color: rgb(255, 255, 255); /* Set the text color */
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
+  padding: 0 1rem; /* Adds horizontal padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0); /* Optional: adds a shadow */
+  transition: all 0.3s ease-in-out; /* Smooth transition for resizing */
+  z-index: 1000; /* Ensures the navbar stays on top of other elements */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.nav.scrolled {
+  height: 50px; /* Smaller height when scrolled */
+  padding: 0.5rem 2rem; /* Reduced padding */
+  background-color: #d2bd01d8; /* Optional: Slightly lighter background */
+}
+
+/* Logo Styling */
+.nav-logo {
+  width: 100px; /* Default logo size */
+  height: auto;
+  transition: all 0.3s ease-in-out; /* Smooth resizing animation */
+}
+
+.nav.scrolled .nav-logo {
+  width: 70px; /* Smaller logo size when scrolled */
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #600d0d; /* Hover color */
+}
+.site-title {
+  font-size: 3rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .25rem;
+}
+
+.nav li.active {
+  background-color: #dfdf1e7e;
+}
+/* Initial hidden state */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(-50px); /* Slight downward shift */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  will-change: opacity, transform; /* Optimizes performance */
+}
+
+/* Visible state */
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+}
+/* Initial hidden state */
+
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.container {
+  margin: 1rem;
+  text-align: center;
+}

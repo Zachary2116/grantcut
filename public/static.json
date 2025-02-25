@@ -1,0 +1,9 @@
+{
+    "root": "build/",
+    "routes": {
+      "/": "index.html",
+      "/mission": "mission.html",
+      "/contact": "contact.html",
+      "/team": "team.html"
+    }
+  }
