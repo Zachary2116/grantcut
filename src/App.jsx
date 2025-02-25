@@ -136,6 +136,19 @@ function App() {
           </div>
         </div>
       </section>
+
+            {/* Journal Section */}
+            <section className="consultation-section ">
+        <div className="fade-in-section">
+          <h2>Contact Us For More Details</h2>
+          <p>
+            We are currently open for more partnerships. Please click the button below for more information on how to reach us.
+          </p>
+          <a href="/contact">
+            <button className="modern-button2">Email Us Now!</button>
+          </a>
+        </div>
+      </section>
     </>
   );
 }

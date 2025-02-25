@@ -304,4 +304,70 @@ h1 {
   opacity: 0.4;
 }
 
+.consultation-section {
+  position: relative;
+  background-color: #000000; /* Adjust path if needed */
+  background-attachment: fixed;
+  min-height: 120vh; /* Ensure the section is at least full viewport height */
+  width:100%;
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  text-align: center; /* Center text horizontally */
+  padding: 2rem 0; /* Add some vertical padding */
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+}
 
+.mission-fade {
+  opacity: 0;
+  transform: translateY(-100px); /* Slight downward shift */
+  transition: opacity 5s ease-out, transform 3s ease-out;
+  will-change: opacity, transform; /* Optimizes performance */
+}
+
+.consultation-section {
+box-shadow: 0 20px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+.consultation-section  h2 {
+color: rgb(255, 255, 255); /* Text color for readability */
+font-size: 4rem;
+margin-bottom: 1rem;
+/*text-shadow: 3px 2px #0000006d;*/
+}
+
+.consultation-section  p {
+color: rgb(255, 255, 255); /* Text color for readability */
+font-size: 1.5rem;
+line-height: 1.6;
+margin-bottom: 1.5rem;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+/*text-shadow: 2px 2px #0000006c;*/
+}
+.modern-button2 {
+  background-color: #cacaca83; /* Primary color */
+  color: rgb(255, 187, 0);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border:#1a1a1a;
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add depth */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  width: 40%;
+}
+
+.modern-button2:hover {
+  background-color: #867f2f; /* Slightly lighter on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+.modern-button2:active {
+  transform: scale(0.98); /* Slight "press" effect */
+}
