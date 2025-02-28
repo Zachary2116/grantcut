@@ -22,7 +22,7 @@ export default function Navbar() {
       <ul>
         <li><a href="/mission">Mission</a></li>
         <li><a href="/journal">News</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>r
         <li><a href="/team">About</a></li>
       </ul>
     </nav>

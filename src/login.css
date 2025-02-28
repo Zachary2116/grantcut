@@ -1,0 +1,135 @@
+/* Full-page login styling */
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5%;
+    background: linear-gradient(160deg, #b84430, #000000, #000000);
+}
+
+/* Form container */
+form {
+    max-width: 400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Avatar Image */
+.imgcontainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+}
+
+/* Form Fields */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    border-color: #ffcc00;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #ffcc00;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #b34b00;
+    color: #ffffff;
+}
+
+/* Remember Me */
+.container label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.container input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #ffcc00;
+}
+
+/* Forgot Password */
+.psw {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+}
+
+.psw a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.psw a:hover {
+    color: #ffffff;
+}
+
+/* Cancel Button */
+.cancelbtn {
+    width: 100%;
+    background: #555;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.cancelbtn:hover {
+    background: #333;
+}

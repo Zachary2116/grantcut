@@ -11,7 +11,8 @@ export default defineConfig({
         contact: 'contact.html',
         journal: 'journal.html',
         mission: 'mission.html',
-        team: 'team.html'
+        team: 'team.html',
+        login: 'login.html'
       }
     }
   }
