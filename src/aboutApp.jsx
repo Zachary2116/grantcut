@@ -5,18 +5,25 @@ import collaboration from './assets/collaborating2.jpg'
 import testpic from './assets/cartoontest.jpg'
 import zach from './assets/zach_picture.jpg'
 import alex from './assets/alex_pic.jpg'
+import zachd from './assets/zachd.jpg'
 const teamMembers = [
     {
       name: 'Zach Zhao',
       position: 'Co-Founder',
       image: zach, // Replace with actual image URLs
-      description: 'Zach is a freshman at the University of Maryland. He focuses on technical aspects, grant sourcing, and outreach. In his spare time he loves playing with his cat and lifting weights',
+      description: 'Zach is an undergraduate student at the University of Maryland. He focuses on technical aspects, grant sourcing, and outreach. In his spare time he loves playing with his cat and lifting weights',
     },
     {
       name: 'Alex Liu',
       position: 'Co-Founder',
       image: alex,
-      description: 'Alex is a freshman at the University of Texas at Austin. He focuses on outreach and grant writing. He also likes to lift weights in his spare time in addition to his video game hobby. ',
+      description: 'Alex is a undergraduate student at the University of Texas at Austin. He focuses on outreach and grant writing. He also likes to lift weights in his spare time in addition to his video game hobby. ',
+    },
+    {
+      name: 'Zach Dubilirer',
+      position: 'Outreach Management',
+      image: zachd,
+      description: 'Zach is also an undergraduate freshman at the University of Maryland. He is currently focused on outreach. He loves to play tennis and welding in his free time.',
     },
 ]
 
