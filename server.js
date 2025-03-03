@@ -1,18 +1,54 @@
-const express = require('express');
-const path = require('path');
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
 
-// Serve static files from the React build directory
-app.use(express.static(path.join(__dirname, 'build')));
+// Middleware
+app.use(express.json());
+app.use(cors());
 
-// Serve index.html for all unknown routes (supports React Router)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log("MongoDB Connected"))
+  .catch(err => console.error(err));
+
+// User Schema
+const UserSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+const User = mongoose.model("User", UserSchema);
+
+// Register Route
+app.post("/register", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Check if user exists
+    let user = await User.findOne({ email });
+    if (user) return res.status(400).json({ msg: "User already exists" });
+
+    // Hash Password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Save user
+    user = new User({ email, password: hashedPassword });
+    await user.save();
+
+    res.json({ msg: "User registered successfully" });
+  } catch (err) {
+    res.status(500).json({ msg: "Server error" });
+  }
 });
+
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

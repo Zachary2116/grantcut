@@ -51,7 +51,7 @@ form {
     color: #ffffff;
   }
   
-  input,
+  
   textarea {
     padding: 10px;
     border: 1px solid #ddd;
@@ -61,11 +61,8 @@ form {
     transition: border-color 0.3s ease;
   }
   
-  input:focus,
-  textarea:focus {
-    border-color: #007bff;
-  }
-  
+
+
   textarea {
     resize: none;
   }
@@ -97,6 +94,11 @@ form .input-box {
 .input-box .field.mess {
   height: 10rem;
   resize: none;
+}
+
+.input-box .field.mess:focus {
+  border-color: #ffcc00;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 form button {
