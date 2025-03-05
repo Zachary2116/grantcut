@@ -20,7 +20,7 @@ const teamMembers = [
       description: 'Alex is a undergraduate student at the University of Texas at Austin. He focuses on outreach and grant writing. He also likes to lift weights in his spare time in addition to his video game hobby. ',
     },
     {
-      name: 'Zach Dubilirer',
+      name: 'Zachary Dubilirer',
       position: 'Outreach Management',
       image: zachd,
       description: 'Zach is also an undergraduate freshman at the University of Maryland. He is currently focused on outreach. He loves to play tennis and welding in his free time.',
