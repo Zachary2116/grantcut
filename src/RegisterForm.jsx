@@ -36,7 +36,7 @@ const RegisterForm = () => {
 
   return (
     <div className="register">
-      <form onSubmit={handleRegister}>
+     <form action="/sign_up" method="POST">
         <input
           type="email"
           placeholder="Email"
