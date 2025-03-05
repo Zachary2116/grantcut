@@ -1,9 +1,9 @@
-require("dotenv").config();
-const express = require("express");
-const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const cors = require("cors");
+import "dotenv/config";
+import express from "express";
+import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import cors from "cors";
 
 const app = express();
 
@@ -13,10 +13,10 @@ app.use(cors());
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => console.log("MongoDB Connected"))
-  .catch(err => console.error(err));
+  dbName: "DBgrantcut",
+}).then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.error("❌ MongoDB Connection Error:", err));
+
 
 // User Schema
 const UserSchema = new mongoose.Schema({
@@ -26,7 +26,11 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
-// Register Route
+// Generate JWT Token
+const generateToken = (userId) => {
+  return jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: "1h" });
+};
+
 app.post("/register", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -43,12 +47,16 @@ app.post("/register", async (req, res) => {
     user = new User({ email, password: hashedPassword });
     await user.save();
 
+    console.log("✅ User saved:", user);  // Debugging
+
     res.json({ msg: "User registered successfully" });
   } catch (err) {
+    console.error("❌ Error saving user:", err);
     res.status(500).json({ msg: "Server error" });
   }
 });
 
+
 // Start Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 5001; // Change 5000 to 5001
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
