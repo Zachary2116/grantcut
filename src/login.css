@@ -133,3 +133,24 @@ button:hover {
 .cancelbtn:hover {
     background: #333;
 }
+.alert {
+    position: fixed; /* Ensures it does not affect layout */
+    top: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; /* Fully hides the element */
+    transition: opacity 0.5s ease-in-out;
+    z-index: 999;
+    width: 300px; 
+    padding: 8px 12px; 
+    font-size: 14px;
+    border-radius: 5px;
+}
+.alert svg {
+    width: 18px; /* Smaller icon */
+    height: 18px;
+}
+.alert.show {
+    display: block;
+    opacity: 1;
+}
