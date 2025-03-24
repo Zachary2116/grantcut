@@ -6,12 +6,13 @@ import testpic from './assets/cartoontest.jpg'
 import zach from './assets/zach_picture.jpg'
 import alex from './assets/alex_pic.jpg'
 import zachd from './assets/zachd.jpg'
+import james from "./assets/james.jpg"
 const teamMembers = [
     {
       name: 'Zach Zhao',
       position: 'Co-Founder',
       image: zach, // Replace with actual image URLs
-      description: 'Zach is an undergraduate student at the University of Maryland. He focuses on technical aspects, grant sourcing, and outreach. In his spare time he loves playing with his cat and lifting weights',
+      description: 'Zach is an undergraduate student at the University of Maryland. He focuses on technical aspects, AI Implementation, grant sourcing, and outreach. In his spare time he loves playing with his cat and lifting weights',
     },
     {
       name: 'Alex Liu',
@@ -23,7 +24,13 @@ const teamMembers = [
       name: 'Zachary Dubilirer',
       position: 'Outreach Management',
       image: zachd,
-      description: 'Zach is also an undergraduate freshman at the University of Maryland. He is currently focused on outreach. He loves to play tennis and welding in his free time.',
+      description: 'Zach is also an undergraduate student at the University of Maryland. He is currently focused on outreach. He loves to play tennis and welding in his free time.',
+    },
+    {
+      name: 'James Lee',
+      position: 'Full Stack',
+      image: james,
+      description: 'James is an undergraduate student at the University of Maryland. He is currently focused on our App Development process. He loves gaming and working out.',
     },
 ]
 
