@@ -97,6 +97,7 @@ body {
     clip-path: circle(50%); /* Masks the image into a circle */
     -webkit-clip-path: circle(50%); /* Ensures compatibility with Safari */
     overflow: hidden; /* Ensures content outside the circle is not visible */
+
   }
   .about-image img {
     max-width: 100%;
