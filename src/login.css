@@ -1,6 +1,12 @@
 /* Full-page login styling */
 .login {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -8,18 +14,108 @@
     background: linear-gradient(160deg, #b84430, #000000, #000000);
 }
 
-/* Form container */
-form {
-    max-width: 400px;
+h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+}
+h6 {
+    margin-bottom: 0.75rem; 
+    padding-bottom: 0.75rem;
+}
+h6 span{
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+  }
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked){
+  position: absolute;
+  left: -9999px;
+}
+.checkbox:checked + label,
+.checkbox:not(:checked) + label{
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: #ffeba7;
+}
+.checkbox:checked + label:before,
+.checkbox:not(:checked) + label:before{
+    position: absolute;
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #ffeba7;
+    background-color: #102770;
+    font-family: 'unicons';
+    content: '\eb4f';
+    z-index: 20;
+    top: -10px;
+    left: -10px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 24px;
+    transition: all 0.5s ease;
+  }
+  .checkbox:checked + label:before {
+    transform: translateX(44px) rotate(-270deg);
+  }
+  
+
+  .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+    transform: rotateY(180deg);
+  }
+  
+  /* Update your card styling */
+  .card-3d-wrap {
+    position: relative;
+    width: 440px;
+    max-width: 100%;
+    height: 400px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    margin-top: 60px;
+  }
+  
+  .card-3d-wrapper {
     width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 600ms ease-out;
+  }
+  
+  /* Move the form styling to the card-front and card-back */
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     color: #ffffff;
-    text-align: center;
-}
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+  }
 
 /* Avatar Image */
 .imgcontainer {
@@ -86,20 +182,37 @@ button:hover {
     color: #ffffff;
 }
 
+
+
 /* Remember Me */
-.container label {
+.card-front label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card-front input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    accent-color: #ffcc00;
+}
+.card-back label {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
 }
 
-.container input[type="checkbox"] {
+.card-back input[type="checkbox"] {
     width: 16px;
     height: 16px;
     accent-color: #ffcc00;
 }
-
 /* Forgot Password */
 .psw {
     font-size: 14px;
@@ -117,22 +230,6 @@ button:hover {
     color: #ffffff;
 }
 
-/* Cancel Button */
-.cancelbtn {
-    width: 100%;
-    background: #555;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.3s ease;
-}
-
-.cancelbtn:hover {
-    background: #333;
-}
 .alert {
     position: fixed; /* Ensures it does not affect layout */
     top: 10px; 

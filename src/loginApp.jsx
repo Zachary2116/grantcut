@@ -82,62 +82,76 @@ function Login({ onLogin }) {
 
   return (
     <section className="login fade-in-section">
-      <form onSubmit={handleLogin}>
-        <div className="container">
-          <div
-            role="alert"
-            id="errorAlert"
-            className={`alert alert-warning ${errorMessage ? "show" : ""}`}
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-            >
-                <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-            </svg>
-            <span key={errorMessage} id="errorMessage">{errorMessage}</span>
-        </div>
+      <h6><span>Log In </span><span>Sign Up</span></h6>
+                  <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                  <label for="reg-log"></label>
+      <div className="card-3d-wrap">
+        <div className="card-3d-wrapper">
+          <form onSubmit={handleLogin} className = "card-front">
+          
+            
+            
+            <div
+              role="alert"
+              id="errorAlert"
+              className={`alert alert-warning ${errorMessage ? "show" : ""}`}
+          >
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="stroke-current shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+              >
+                  <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                  />
+              </svg>
+              <span key={errorMessage} id="errorMessage">{errorMessage}</span>
+          </div>
+          <h4>Log In</h4>
+            <label htmlFor="email">
+              <b>Email</b>
+            </label>
+            <input
+              type="email"
+              placeholder="Enter Email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
 
-          <label htmlFor="email">
-            <b>Email</b>
-          </label>
-          <input
-            type="email"
-            placeholder="Enter Email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+            <label htmlFor="password">
+              <b>Password</b>
+            </label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
-          <label htmlFor="password">
-            <b>Password</b>
-          </label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+            <button type="submit">Login</button>
+           
+            
+        </form>
+        <form className="card-back">
+        
+        
+        
+        <h4>Sign In</h4>
+    
 
-          <button type="submit">Login</button>
-        </div>
-
-        <div className="container">
-          <button type="button" className="cancelbtn">
-            Cancel
-          </button>
-        </div>
-      </form>
+        <button type="submit">Login</button>
+        
+        </form>
+      </div>
+      </div>
     </section>
   );
 }
