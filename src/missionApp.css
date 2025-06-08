@@ -77,45 +77,97 @@ body {
     text-align: left;
   }
   
-  /* Content Section Styles */
-  .content-section {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: rgb(0, 0, 0);
-    border-radius: 0px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .content-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-  }
-  
-  .content-section p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-  }
-  
+/* ===== Content Section – readability upgrade ===== */
+.content-section {
+  background: #0e0e0f;                   /* softer than pure black   */
+  padding: clamp(2.5rem, 6vw, 5rem);     /* roomy + responsive      */
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.45);
+  overflow: hidden;                      /* tidy if you add effects */
+  display: flex;                         /* centers .inner column   */
+  justify-content: center;
+}
+
+.content-section .inner {
+  max-width: 1000px;                     /* ~80‑90 characters wide   */
+  width: 100%;
+}
+
+/* ---------- Headings ---------- */
+.content-section h2 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: #fff;
+  margin-bottom: 1.25rem;
+  letter-spacing: .03em;
+}
+
+.content-section h3 {
+  font-size: 1.35rem;
+  margin: 2.25rem 0 .85rem;
+  color: #f3f3f3;
+}
+
+/* ---------- Body text ---------- */
+.content-section p,
+.content-section li {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #d7dbe5;
+}
+
+/* Tighten paragraph spacing */
+.content-section p { margin-bottom: 2.4rem; margin-left:0%; margin-right: 0%;}
+
+/* ---------- Center the bullet lists ---------- */
+.content-section ul {
+  /* remove default indent so centering is clean */
+  padding-left: 0;
+  margin: 0;
+
+  /* make items center inside each grid column */
+  justify-items: center;           /* for grid layout ≥ 900 px */
+  text-align: center;              /* for stacked layout on phones */
+}
+
+.content-section li {
+  list-style: none;                /* kill default disc */
+  margin-bottom: 1.1rem;
+}
+
+.content-section li::before {
+  content: "•";                    /* custom bullet */
+  display: inline-block;           /* keeps bullet inline with text */
+  margin-right: 0.55rem;           /* gap between bullet & text */
+  font-size: 1.25rem;
+  line-height: 1;                  /* keeps vertical alignment tight */
+  color: #22d6ff;                  /* cyan brand colour */
+}
+
+/* keep the grid definition from earlier */
+@media (min-width: 900px) {
   .content-section ul {
-    list-style: disc;
-    padding-left: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem 3.5rem;
   }
-  
-  .content-section li {
-    margin-bottom: 0.5rem;
-    list-style-type: none;
-  }
-  
-  .content-section a {
-    color: #a2dfeb;
-    text-decoration: none;
-  }
-  
-  .content-section a:hover {
-    text-decoration: underline;
-  }
+}
+
+
+/* ---------- Links ---------- */
+.content-section a {
+  color: #22d6ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .25s;
+}
+.content-section a:hover { color: #fff; }
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 520px) {
+  .content-section { padding: 2rem 1.4rem; }
+  .content-section h2 { font-size: 1.7rem; }
+}
+
   
 /* Initial hidden state */
 .fade-in-section {
@@ -129,4 +181,9 @@ body {
   .fade-in-visible {
     opacity: 1;
     transform: translateY(0); /* Reset position */
+  }
+
+  .bold{
+    font-weight: 700;
+    color:#22d6ff;
   }

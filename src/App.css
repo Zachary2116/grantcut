@@ -351,17 +351,19 @@ margin-right: auto;
 /*text-shadow: 2px 2px #0000006c;*/
 }
 .modern-button2 {
-  background-color: #cacaca83; /* Primary color */
-  color: rgb(255, 187, 0);
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border:#1a1a1a;
-  border-radius: 0;
+  
+  --clr-1: #ff0077;
+  --clr-2: #00c3ff;
+  position: relative;
+  padding: 0.9rem 2.5rem;
+  font-weight: 600;
+  background: transparent;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add depth */
-  transition: all 0.3s ease; /* Smooth hover effect */
-  width: 40%;
+  transition: background .3s ease;
+  z-index: 1;
 }
 
 .modern-button2:hover {
@@ -371,4 +373,114 @@ margin-right: auto;
 
 .modern-button2:active {
   transform: scale(0.98); /* Slight "press" effect */
+}
+
+/* ---------- REVAMP SECTION ---------- */
+.revamp-section {
+  position: relative;
+  overflow: hidden;                 /* keep blobs clipped */
+  text-align: center;
+  padding: 6rem 1rem;
+  /* animated diagonal gradient */
+  background: linear-gradient(130deg,#050505 0%,#000000 50%,#050505 100%);
+  background-size: 300% 300%;
+  animation: revampBG 12s ease-in-out infinite;
+  border-top: 2px solid #f0d8003d;
+  border-bottom: 2px solid #f0d8003d;
+  height: 50rem;
+}
+
+/* drifting “glow blobs” */
+.revamp-section::before,
+.revamp-section::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 100rem;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: blobMove 15s linear infinite;
+}
+.revamp-section::before {
+  background: #7b1f94;
+  top: -100px;
+  left: -130px;
+}
+.revamp-section::after {
+  background: #a8941f;
+  bottom: -100px;
+  right: -70px;
+  animation-delay: -10s;            /* offset motion */
+}
+
+/* ---------- TEXT ---------- */
+.revamp-title {
+  font-size: clamp(2rem,5vw,2.8rem);
+  letter-spacing: .05em;
+  margin-bottom: .75rem;
+  color: #ffffff;
+  text-shadow:
+    0 0 6px #b89d28,
+    0 0 12px #b89d28,
+    0 0 20px #b89d28;
+}
+
+.revamp-copy {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d0d0d0;
+}
+
+/* ---------- BUTTON ---------- */
+.modern-button1 {
+
+  position: relative;
+  padding: 0.9rem 2.5rem;
+  font-weight: 600;
+  background: transparent;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background .3s ease;
+  z-index: 1;
+}
+.modern-button2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg,var(--clr-1),var(--clr-2));
+  z-index: -1;
+  transition: opacity .3s ease, transform .3s ease;
+  opacity: .8;
+  transform: scale(1);
+}
+.modern-button2:hover::before {
+  opacity: 1;
+  transform: scale(1.08);
+}
+.modern-button2:hover {
+  box-shadow:
+    0 0 8px var(--clr-1),
+    0 0 20px var(--clr-2);
+}
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes revampBG {
+  0%,100% {background-position: 0 0;}
+  50%     {background-position: 100% 100%;}
+}
+
+@keyframes blobMove {
+  0%   {transform: translate(0,0)   scale(1);}
+  25%  {transform: translate(40px,-60px) scale(1.1);}
+  50%  {transform: translate(80px,40px)  scale(.9);}
+  75%  {transform: translate(-40px,60px) scale(1.15);}
+  100% {transform: translate(0,0)   scale(1);}
 }

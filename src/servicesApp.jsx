@@ -86,35 +86,35 @@ function App() {
         <div className="pricing-grid">
           <div className="process-card">
             <h3>Starter</h3>
-            <p className="price">$299 setup<br/>$29&nbsp;/&nbsp;mo</p>
+            <p className="price">$99 setup<br/>$29&nbsp;/&nbsp;mo</p>
             <ul>
               <li>3‑page site + hosting</li>
               <li>1 content edit / month</li>
               <li>Email & chat support</li>
             </ul>
-            <a href="#contact" className="cta">Start Demo</a>
+            <a href="contact" className="cta">Start Demo</a>
           </div>
           <div className="process-card popular">
             <h3>Growth</h3>
-            <p className="price">$499 setup<br/>$59&nbsp;/&nbsp;mo</p>
+            <p className="price">$199 setup<br/>$39&nbsp;/&nbsp;mo</p>
             <ul>
               <li>Up to 8 pages</li>
               <li>AI chatbot & lead forms</li>
               <li>SEO basics & image optimization</li>
               <li>2 edits / month</li>
             </ul>
-            <a href="#contact" className="cta">Start Demo</a>
+            <a href="contact" className="cta">Start Demo</a>
           </div>
           <div className="process-card">
             <h3>Authority</h3>
-            <p className="price">$999 setup<br/>$149&nbsp;/&nbsp;mo</p>
+            <p className="price">$299 setup<br/>$49&nbsp;/&nbsp;mo</p>
             <ul>
               <li>Unlimited pages + blog CMS</li>
               <li>E‑commerce or booking engine</li>
               <li>Quarterly CRO & SEO reviews</li>
               <li>Priority support</li>
             </ul>
-            <a href="#contact" className="cta">Start Demo</a>
+            <a href="contact" className="cta">Start Demo</a>
           </div>
         </div>
       </section>

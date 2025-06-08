@@ -95,7 +95,7 @@ function App() {
           </a>
         </div>
       </section>
-      
+
       <section className="services-section">
         <div className="services-container fade-in-section">
           <h2 className="services-title">
@@ -136,7 +136,19 @@ function App() {
           </div>
         </div>
       </section>
-
+       {/* *** NEW: Revamp Announcement *** */}
+    <section className="revamp-section fade-in-section">
+      <h2 className="revamp-title"> Website Revamp </h2>
+      <p className="revamp-copy">
+        We just rolled out a fresh look and new features! Explore the updated
+        <strong> Services</strong> page to see how GrantCut can streamline your
+        funding journey even further.
+      </p>
+      <a href="/services">
+        <button className="modern-button2">See What’s New</button>
+      </a>
+    </section>
+    {/* *** End Revamp Section *** */}
             {/* Journal Section */}
             <section className="consultation-section ">
         <div className="fade-in-section">
@@ -145,7 +157,7 @@ function App() {
             We are currently open for more partnerships. Please click the button below for more information on how to reach us.
           </p>
           <a href="/contact">
-            <button className="modern-button2">Email Us Now!</button>
+            <button className="modern-button">Email Us Now!</button>
           </a>
         </div>
       </section>

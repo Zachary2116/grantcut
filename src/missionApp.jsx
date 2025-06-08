@@ -38,29 +38,37 @@ function App() {
         </div>
       </section>
 
-      <section className="content-section  fade-in-section">
-        <h2>Mission Statement</h2>
-        <p>
-          We assist non-profit organizations in obtaining state-level grants with minimal effort on their side. Our focus is on ethical, smaller NPOs that face staffing difficulties in applying for grants. We help these organizations find and secure grants that align with their work and values, without requiring additional manpower from their teams.
-        </p>
-        <p>
-          In addition, GrantCut extends its services to small and medium-sized private enterprises that need assistance applying for grants. All organizations we work with must share our commitment to sustainable development and missions that bring significant benefits to their communities.
-        </p>
 
-        <h2>Our Vision</h2>
-        <p>
-          Starting locally, we aim to connect with small to medium-sized non-profit organizations through cold-email outreach and social media campaigns. By building strong partnerships with these organizations, we strive to create a lasting impact.
-        </p>
+<section class="content-section fade-in-section">
+<div class="inner">
+  <h2>Our Mission</h2>
 
-        <h2>Resources</h2>
-        <p>
-          Explore these websites for additional information on grants:
-        </p>
-        <ul>
-          <li><a href="https://grants.gov/" target="_blank" rel="noopener noreferrer">grants.gov</a></li>
-          <li><a href="https://grantsgovprod.wordpress.com/2021/03/17/how-to-determine-eligibility-for-federal-funding-opportunities/" target="_blank" rel="noopener noreferrer">How to Determine Eligibility for Federal Funding Opportunities</a></li>
-        </ul>
-      </section>
+  <p><strong>GrantCut exists to remove the structural and administrative barriers that keep worthy initiatives from thriving.</strong> We blend data‑driven grant discovery, expert storytelling, and long‑term relationship management so nonprofits and socially conscious small businesses can focus on their core purpose—creating sustainable, positive change—while we secure the resources they need to do it.</p>
+
+
+  <h3>What drives us</h3>
+  <ul>
+    <li><strong>Impact over paperwork.</strong> Every hour you spend navigating forms or compliance is an hour not spent serving your community. We streamline those tasks—search, eligibility checks, narrative drafting, budgets, revisions, follow‑ups—so your team can stay mission‑focused.</li>
+    <li><strong>Ethical, sustainable funding.</strong> We prioritize opportunities that align with equitable development goals and environmentally responsible practices, ensuring that financial growth never compromises people or planet.</li>
+   
+    <li><strong>Partnership, not just paperwork.</strong> From the first discovery call through post‑award reporting and renewal cycles, we stay in the trenches with you, serving as an extension of your team.</li>
+  </ul>
+
+
+  <h3>How we deliver</h3>
+  <ul>
+    <li><strong>Smart Grant Discovery &amp; Matching</strong> – AI‑assisted search plus human curation identifies the best‑fit funding streams for your unique mission. In addition we are working on<bold class= "bold">  an AI service</bold> that can <bold class= "bold">automate the grant writing process</bold>,streamlining and expediting grant writing, allowing you to apply to more grants than usual.</li>
+    <li><strong>Hassle‑Free Grant Writing</strong> – Seasoned writers craft compelling, metrics‑driven narratives that resonate with reviewers and comply with every guideline.</li>
+    <li><strong>Ongoing Compliance &amp; Renewals</strong> – Automated deadline tracking and proactive check‑ins keep awards active and future funding pipelines warm.</li>
+  
+  </ul>
+
+
+  <p><strong>Our pledge:</strong> We will cut through complexity, champion transparency, and advocate fiercely for the changemakers we serve. When you partner with GrantCut, you gain more than a grant writer—you gain a strategic ally committed to unlocking sustainable funding so your vision can scale and endure.</p>
+  </div>
+</section>
+
+
     </div>
   );
 }
