@@ -20,10 +20,12 @@ export default function Navbar() {
         <img src={logo} alt="GrantCut Logo" className="nav-logo" />
       </a>
       <ul>
+      <li><a href="/services">Website Revamp 2025            </a></li>
         <li><a href="/mission">Mission</a></li>
         <li><a href="/journal">News</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/team">About</a></li>
+
       </ul>
     </nav>
   );
