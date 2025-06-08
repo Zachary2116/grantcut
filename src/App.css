@@ -4,6 +4,7 @@
   padding:0rem;
   text-align: center;
   overflow-x: hidden;
+  background: #000000;
 }
 
 .card {
@@ -229,8 +230,8 @@ h1 {
 
 /* Section container */
 .services-section {/* Match background color from the image */
-  background: linear-gradient(#000000b8,black,#00000024,#ffd90016,#00000024,black, black);
-  background-attachment: fixed;
+  background: linear-gradient(#000000,black,rgb(117, 111, 29), black);
+  background-attachment:scroll;
   min-height: 150vh; /* Ensure the section is at least full viewport height */
   width:100%;
   color: rgb(255, 255, 255);

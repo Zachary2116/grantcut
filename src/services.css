@@ -1,0 +1,274 @@
+/* ===============================
+   Contact Services Dynamic – CSS v3
+   Wilder motion + boxed fade‑in sections
+   =============================== */
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+   :root {
+     --brand-gold: #e3b04b;  /* amber */
+     --brand-teal: #6da9c1;  /* muted teal */
+     --brand-purple: #8c6fb6;/* dusty purple */
+     --brand-dark: #000000;
+     --text-light: rgba(255,255,255,0.94);
+     --text-shadow: 0 0 12px rgba(255,255,255,0.18);
+   }
+   
+   /* =================================================
+      Global & Utility
+      ================================================= */
+   *{box-sizing:border-box}
+   body{
+     font-family:'Inter',system-ui,Avenir,Helvetica,Arial,sans-serif;
+     margin:0;padding:0;color:var(--text-light);background:var(--brand-dark);
+     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+     text-rendering:optimizeLegibility;overflow-x:hidden;
+   }/* ===============================
+   Reset / Global
+   =============================== */
+*{box-sizing:border-box}
+body{
+  font-family:'Inter',system-ui,Avenir,Helvetica,Arial,sans-serif;
+  margin:0;padding:0;color:var(--text-light);background:var(--brand-dark);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;overflow-x:hidden;
+}
+
+/* Fade‑in Utility */
+.fade-in-section{opacity:0;transform:translateY(60px) scale(.98);transition:opacity .9s ease-out,transform .9s ease-out}
+.fade-in-visible{opacity:1;transform:translateY(0) scale(1)}
+
+   
+   /* Fade & Pop */
+   .fade-in-section{opacity:0;transform:translateY(60px) scale(.98);
+     transition:opacity 1s cubic-bezier(.25,.8,.25,1),transform 1s cubic-bezier(.25,.8,.25,1)}
+   .fade-in-visible{opacity:1;transform:translateY(0) scale(1)}
+   
+   /* =================================================
+      Keyframes
+      ================================================= */
+      @keyframes flyInDown {
+        0%   { transform: translateY(-140px) scale(.8);  opacity: 0; }
+        70%  { transform: translateY(8px)    scale(1.05);opacity: 1; }
+        100% { transform: translateY(0)      scale(1);   opacity: 1; } /* <-- add opacity:1 */
+      }
+      
+   @keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+   
+   /* =================================================
+      Hero Section
+      ================================================= */
+  /* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 10rem 1.5rem 12rem;
+  background: linear-gradient(160deg, #8f711fc7 0% ,black,#000 80%, #000 80%, #000 100%);
+  /* overflow:hidden;   ← REMOVE this line */
+  overflow: hidden;     /* let extra‑wide letters extend past the padding */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* keep the pseudo‑element; it’s fine */
+.hero::after {
+overflow: visible;
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -30%;
+  width: 160%;
+  height: 140%;
+  background: radial-gradient(circle at 50% 0%, rgba(71, 35, 156, 0.315) 0%, transparent 70%);
+  transform: rotate(8deg);
+  pointer-events: none;
+}
+   
+   .headline{
+     font-size:clamp(3.8rem,15vw,11rem);font-weight:900;letter-spacing:-1px;margin:0 0 .6rem;line-height:1.02;
+     background-image:linear-gradient(90deg,var(--brand-gold)0%,var(--brand-teal)45%,var(--brand-purple)100%);
+     -webkit-background-clip:text;color:transparent;text-shadow:var(--text-shadow);
+     animation:flyInDown 1.3s ease-out forwards;
+     height: 3 rem;
+   }
+   .subline{font-size:clamp(1rem,3vw,1.55rem);max-width:58rem;margin:0 auto 3.2rem;text-shadow:var(--text-shadow);opacity:0;animation:flyInDown 1s .9s ease-out forwards}
+   .highlights{list-style:none;padding:0;margin:0}
+   .highlights li{font-size:1.15rem;margin:.4rem 0;opacity:0}
+   .highlights li:nth-child(1){animation:flyInDown 1s 1.1s forwards}
+   .highlights li:nth-child(2){animation:flyInDown 1s 1.25s forwards}
+   .highlights li:nth-child(3){animation:flyInDown 1s 1.4s forwards}
+   
+   /* =================================================
+      Info & Process Sections
+      ================================================= */
+   .info-section{padding:6rem 1.5rem 8rem;background:#000000;text-align:center}
+   .info-section h2{font-size:2.6rem;color:#fff;margin-bottom:2rem;opacity:0;animation:flyInDown 1s ease-out forwards}
+   .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;max-width:72rem;margin:0 auto}
+   .info-box{background:#111;border:2px solid rgba(255, 255, 255, 0);border-radius:8px;padding:2rem 1.8rem;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.45);transition:transform .35s ease,box-shadow .35s ease;opacity:0;transform:translateY(60px) scale(.96)}
+   .info-box.fade-in-visible{opacity:1;transform:translateY(0) scale(1)}
+   .info-box:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 8px 20px rgba(255,255,255,.12)}
+   .info-box h3{margin-top:0;font-size:1.4rem;margin-bottom:.8rem;color:var(--brand-gold)}
+   .info-box p{font-size:1rem;line-height:1.6;margin:0}
+   
+  /* ===============================
+   Feature Call‑out · Revamp Grid 2.0
+   =============================== */
+.website-revamp{
+    padding:6rem 1.5rem 8rem;
+    background:linear-gradient(180deg,#00000000 0%,#000000 100%);
+    text-align:center;
+  }
+  .website-revamp h2{
+    font-size:2.6rem;
+    margin-bottom:1rem;
+    animation:flyInDown 1s ease-out forwards;
+    opacity:1;
+  }
+  .website-revamp p{
+    font-size:1.15rem;
+    max-width:50rem;
+    margin:0 auto 3rem;
+    opacity:1;
+  }
+  .revamp-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:2rem;
+    max-width:150rem;
+    margin:0 auto;
+    justify-items:center;
+  }
+  .revamp-card{
+    position:center;
+    padding:2.6rem 2rem;
+    border-radius:16px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.08);
+    color:#fff;
+    box-shadow:0 6px 20px rgba(0,0,0,0.45);
+    overflow:hidden;
+    transition:transform .35s ease,box-shadow .35s ease;
+  }
+  .revamp-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,transparent 40%,rgba(109,169,193,0.25) 100%);
+    opacity:0;
+    transition:opacity .35s ease;
+  }
+  .revamp-card:hover{
+    transform:translateY(-12px) scale(1.04);
+    box-shadow:0 12px 32px rgba(0,0,0,0.6);
+  }
+  .revamp-card:hover::after{opacity:1}
+  .revamp-card:nth-child(odd){background:rgba(140,111,182,0.08)}
+  .revamp-card h4{margin:0 0 .6rem;font-size:1.2rem;color:var(--brand-gold)}
+  .revamp-card span{font-size:.95rem;line-height:1.55}
+  
+   
+   /* =================================================
+      Contact Section
+      ================================================= */
+   .contact{padding:5rem 1rem 7rem;background:linear-gradient(150deg,#000 0%,rgba(0,0,0,.85)80%,#0d0d0d 100%);text-align:center}
+   .contact h2{font-size:2.4rem;margin-bottom:1.4rem;color:#fff;animation:flyInDown 1s ease-out forwards}
+   .input-box{display:flex;flex-direction:column;align-items:flex-start;margin:0 auto 1.6rem;max-width:36rem;opacity:0;animation:flyInDown 1s ease-out forwards}
+   .input-box:nth-of-type(1){animation-delay:.4s}.input-box:nth-of-type(2){animation-delay:.55s}.input-box:nth-of-type(3){animation-delay:.7s}
+   label{font-weight:600;margin-bottom:.4rem}
+   .field{width:100%;padding:1rem 1.2rem;border:1px solid rgba(255,255,255,.25);border-radius:4px;background:rgba(255,255,255,.06);color:#fff;font-size:1rem;backdrop-filter:blur(4px)}
+   .field:focus{outline:none;border-color:var(--brand-gold);box-shadow:0 0 8px var(--brand-gold)}
+   .mess{min-height:10rem;resize:vertical}
+   .cta{margin-top:.8rem;background:var(--brand-teal);padding:1.15rem 2.6rem;font-size:1.1rem;border:none;border-radius:4px;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}
+   .cta:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(109,169,193,.5);background:#3b8ca7}
+/* ===============================
+   Pricing Section – fixed bracket & visibility
+   =============================== */
+   .pricing-section{
+    padding:6rem 1.5rem 8rem;
+    background:linear-gradient(180deg,#000000 0%,#000 100%);
+    text-align:center;
+  }
+  .pricing-section h2{
+    font-size:2.6rem;
+    margin-bottom:3rem;
+    opacity:1;
+  }
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+    max-width:72rem;
+    margin:0 auto 2rem;
+  }
+  .process-card{
+    position:relative;
+    background:rgba(30,30,30,0.92);
+    backdrop-filter:blur(4px);
+    padding:2.6rem 2rem 3.4rem;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+    color:#fff;
+    box-shadow:0 6px 18px rgba(0,0,0,0.5);
+    transition:transform .35s ease,box-shadow .35s ease;
+    /* temporarily show immediately */
+    opacity:1;
+    transform:translateY(0);
+  }
+  .process-card.fade-in-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .process-card:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:var(--shadow-lg);
+  }
+  .process-card h3{margin:0 0 .8rem;font-size:1.4rem;color:var(--brand-gold)}
+  .price{font-size:1.25rem;font-weight:700;margin:0 0 1.2rem;line-height:1.35}
+  .process-card ul{list-style:none;padding:0;margin:0 0 1.5rem 0;font-size:.95rem;line-height:1.55;text-align:left}
+  .process-card ul li::before{content:"✔";color:var(--brand-teal);margin-right:.4rem}
+  .process-card.popular::after{
+    position:absolute;
+    top:-12px;right:-20px;
+    transform:rotate(45deg);
+    background:var(--brand-gold);
+    color:#000;
+    font-size:.75rem;
+    font-weight:700;
+    padding:.35rem 3rem;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+  }
+  
+  
+   /* =================================================
+      Responsive
+      ================================================= */
+   @media(max-width:768px){
+     .headline{font-size:3rem}
+     .subline{font-size:.95rem}
+     .revamp-grid,.info-grid{grid-template-columns:1fr}
+   }
+   
+   /* ===============================
+   Buttons / CTAs
+   =============================== */
+.cta{
+    display:inline-block;
+    background:linear-gradient(135deg,var(--brand-teal),var(--brand-purple));
+    color:#fff;
+    padding:1rem 2.6rem;
+    font-size:1rem;
+    font-weight:600;
+    border:none;
+    border-radius:50px;
+    box-shadow:0 4px 14px rgba(0,0,0,.3);
+    transition:transform .25s ease, box-shadow .25s ease;
+    text-decoration:none;
+  }
+  .cta:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 8px 20px rgba(109,169,193,.55);
+  }
+  .hero-cta{
+    margin-top:2rem;
+    background:linear-gradient(135deg,var(--brand-gold),var(--brand-purple));
+  }
+  
