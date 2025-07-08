@@ -272,3 +272,90 @@ overflow: visible;
     background:linear-gradient(135deg,var(--brand-gold),var(--brand-purple));
   }
   
+
+  /* ───────────────────────────────────────────────
+   TABLET  ( ≤ 768 px )
+   ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 6rem 1.75rem 7rem;
+  }
+
+  .headline {
+    font-size: clamp(2.8rem, 10vw, 4.8rem);
+    letter-spacing: -.5px;
+  }
+
+  .subline       { font-size: 1rem; max-width: 90%; }
+  .highlights li { font-size: 1rem; }
+
+  /* ---------- INFO  &  REVAMP GRIDS ---------- */
+  .info-grid,
+  .revamp-grid   { grid-template-columns: 1fr; }
+
+  .info-section  { padding: 5rem 1.75rem 6.5rem; }
+  .website-revamp { padding: 5rem 1.75rem 6.5rem; }
+
+  /* ---------- CONTACT ---------- */
+  .contact       { padding: 4.5rem 1.5rem 6rem; }
+  .input-box     { max-width: 100%; }
+
+  /* ---------- PRICING ---------- */
+  .pricing-section { padding: 5rem 1.5rem 7rem; }
+  .pricing-grid    { grid-template-columns: 1fr; }
+
+  /* ---------- GENERAL TYPOGRAPHY ---------- */
+  h2              { font-size: 2rem; }
+  h3              { font-size: 1.25rem; }
+  p,
+  .info-box p,
+  .revamp-card span,
+  .price          { font-size: .95rem; }
+}
+
+/* ───────────────────────────────────────────────
+   PHONE  ( ≤ 480 px )
+   ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* ---------- HERO ---------- */
+  .hero            {
+    padding: 4.5rem 1.25rem 5.5rem;
+  }
+  .headline        {
+    font-size: 2.4rem;
+    -webkit-text-stroke-width: .55px;
+  }
+  .subline         { font-size: .9rem; }
+  .highlights li   { font-size: .9rem; }
+
+  /* ---------- INFO ---------- */
+  .info-section    { padding: 4rem 1.25rem 5.5rem; }
+  .info-box        { padding: 1.8rem 1.4rem; }
+
+  /* ---------- REVAMP GRID ---------- */
+  .website-revamp  { padding: 4rem 1.25rem 5.5rem; }
+  .revamp-card     { padding: 2rem 1.5rem; }
+
+  /* ---------- CONTACT ---------- */
+  .contact         { padding: 4rem 1.25rem 5.5rem; }
+  .field           { padding: .9rem 1rem; font-size: .9rem; }
+  .cta             { padding: .9rem 2rem; font-size: .95rem; }
+
+  /* ---------- PRICING ---------- */
+  .pricing-section { padding: 4rem 1.25rem 6rem; }
+  .process-card    { padding: 2rem 1.5rem 3rem; }
+
+  /* ---------- BUTTONS ---------- */
+  .cta,
+  .hero-cta        { font-size: .95rem; }
+
+  /* ---------- FLY-IN ANIMATIONS OPT-OUT (optional) ---------- */
+  /* Uncomment if mobile feels janky
+     .fade-in-section,
+     .info-box,
+     .process-card,
+     .revamp-card { animation: none !important; } */
+}

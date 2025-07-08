@@ -484,3 +484,93 @@ margin-right: auto;
   75%  {transform: translate(-40px,60px) scale(1.15);}
   100% {transform: translate(0,0)   scale(1);}
 }
+
+/* ────────────────  MOBILE-FRIENDLY OVERRIDES  ──────────────── */
+/* Tablet & down  (≤ 768 px)  */
+@media (max-width: 768px) {
+
+  /* General layout tweaks */
+  #root           { overflow-x: hidden; padding: 0 0rem; }
+  .services-container,
+  .services-title-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .service        { flex: 1 1 100%; }
+
+  /* Typographic scaling */
+  .hero-section-title        { font-size: 7.5rem; }       /* was 15rem */
+  h1                         { font-size: 2.2em;  }
+  .services-title,
+  .mission-section h2,
+  .consultation-section h2   { font-size: 2.5rem; }
+  .mission-section p,
+  .consultation-section p,
+  .revamp-copy               { font-size: 1.1rem; }
+
+  /* Buttons */
+  .modern-button,
+  .modern-button1,
+  .modern-button2            { width: 80%; }
+
+  /* Decorative elements */
+  .triangle                  { width: 250%; }
+  .mask                      { height: 180%; }             /* avoids cut-off */
+  .revamp-section            { height: 38rem; }
+}
+
+/* Phone & down  (≤ 480 px)  */
+@media (max-width: 480px) {
+
+  /* Finer typography */
+  .hero-section-title        { font-size: 4.5rem; }
+  .revamp-title              { font-size: 1.8rem; }
+  .mission-section h2,
+  .consultation-section h2   { font-size: 2rem; }
+  .mission-section p,
+  .consultation-section p,
+  .revamp-copy               { font-size: 1rem; }
+
+  /* Spacing */
+  .mission-section,
+  .consultation-section,
+  .revamp-section            { padding: 4rem 1rem; }
+
+  /* Reduce tall fixed heights so pages feel less “scroll-locked” */
+  .mission-section,
+  .consultation-section      { min-height: auto; }
+  .services-section          { min-height: auto; }
+}
+
+/* Optional: use fluid type for hero if you prefer
+   .hero-section-title { font-size: clamp(3.5rem, 18vw, 15rem); } */
+/* ───── Un-angled mask for small screens ───── */
+@media (max-width: 768px) {
+
+  /* 1) Reset the base mask so it sits flat */
+  .mask,
+  .mask-left,
+  .mask-right {
+    transform: translateY(0) !important;   /* wipe out rotate() */
+    transform-origin: center center !important;
+    height: 100%;                          /* shrink a bit so it doesn’t spill */
+  }
+
+  /* 2) Slide-off behaviours (no rotation) */
+  .mask-left.visible  { transform: translateX(-100%) !important; }
+  .mask-right.visible { transform: translateX(100%)  !important; }
+
+  /* 3) If you used any extra tilt in keyframes, kill it here */
+  @keyframes none-angled-left   {           /* optional override */
+    from { transform: translateX(0);    }
+    to   { transform: translateX(-100%); }
+  }
+  @keyframes none-angled-right  {
+    from { transform: translateX(0);    }
+    to   { transform: translateX(100%); }
+  }
+
+  /* Point the mobile classes to the flat keyframes, if you want */
+  .mask-left.mobile-animate  { animation: none-angled-left 1s forwards;  }
+  .mask-right.mobile-animate { animation: none-angled-right 1s forwards; }
+}

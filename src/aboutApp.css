@@ -355,3 +355,91 @@ body {
     color: #ffffff;
     line-height: 1.5;
   }
+
+  /* ───────────  TABLET BREAKPOINT  (≤ 768 px)  ─────────── */
+@media (max-width: 768px) {
+
+  /* ---------- Hero ---------- */
+  .hero-section          { padding: 3rem 1.5rem; }
+  .hero-section h1       {
+    font-size: clamp(4rem, 10vw, 6rem);
+    background-size: 140% auto;          /* lighter GPU load on mobile */
+    background-position: center;
+    text-align: center;
+  }
+  .hero-section p        { font-size: 1.05rem; max-width: 90%; }
+
+  /* ---------- About ---------- */
+  .about-section         {
+    flex-direction: column;
+    height: auto;                        /* let content define height */
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  .about-text            { margin: 0 0 2rem 0; }
+  .about-image           {
+    width: 60vw;
+    height: 60vw;                        /* maintains circle ratio */
+    margin: 0 auto;
+  }
+
+  /* ---------- Values ---------- */
+  .values-section        { padding: 3.5rem 1.5rem; }
+  .values-section h2     { font-size: 1.8rem; }
+  .values-grid           { gap: 1.5rem; }
+
+  /* ---------- CTA ---------- */
+  .cta-section           {
+    height: auto;
+    padding: 4rem 1.5rem;
+  }
+  .cta-section h2        { padding-top: 0; font-size: 1.8rem; }
+
+  /* ---------- Team ---------- */
+  .my-team-section       { height: auto; padding: 6rem 1.5rem; }
+  .team-grid             { gap: 1.5rem; }
+}
+
+/* ───────────  PHONE BREAKPOINT  (≤ 480 px)  ─────────── */
+@media (max-width: 480px) {
+
+  /* ---------- Hero ---------- */
+  .hero-section          {
+    min-height: 100vh;                    /* shorter for tiny screens */
+    padding: 3rem 1rem;
+  }
+  .hero-section h1       {
+    font-size: 3.2rem;
+    -webkit-text-stroke-width: .6px;
+  }
+  .hero-section p        { font-size: .95rem; }
+
+  /* ---------- About ---------- */
+  .about-section         { padding: 2.5rem 1rem; }
+  .about-text h2         { font-size: 1.6rem; }
+  .about-text p          { font-size: 1rem; }
+  .about-image           {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  /* ---------- Values ---------- */
+  .values-section h2     { font-size: 1.6rem; }
+  .values-grid           { grid-template-columns: 1fr; }
+
+  /* ---------- CTA ---------- */
+  .cta-section           { padding: 3.5rem 1rem; }
+  .cta-section h2        { font-size: 1.6rem; }
+  .cta-section p         { font-size: 1rem; }
+
+  /* ---------- Team ---------- */
+  .team-title            { font-size: 2rem; }
+  .team-grid             { grid-template-columns: 1fr; }
+  .team-card             { padding: 1.25rem; }
+  .team-name             { font-size: 1.1rem; }
+  .team-position         { font-size: .95rem; }
+  .team-description      { font-size: .85rem; }
+
+  /* Optional: tone down background shapes for performance */
+  .shape                 { display: none; }
+}

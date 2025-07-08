@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -299,4 +300,68 @@ button:focus-visible {
   text-align: center;
 }
 
+/* === desktop / tablet defaults === */
+.nav-toggle {           /* HIDE the button everywhere by default */
+  display: none;
+}
 
+
+/* ─── MOBILE-ONLY NAV (≤ 480 px) ─── */
+@media (max-width: 480px) {
+
+  /* minimalist text button */
+  .nav-toggle {
+    /* won’t exist on desktop because this rule is mobile-only */
+    display: block;
+    background: none;
+    border: 0;
+    color: #fff;
+    font: 600 1rem/1 Inter, sans-serif;
+    cursor: pointer;
+    z-index: 1100;             /* sits above panel */
+  }
+
+  /* slide-out menu panel */
+  .nav ul {
+    position: fixed;
+    top: 60px;                 /* match your mobile bar height */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform .3s ease-out;
+  }
+  /* reveal when .open is added */
+  .nav.open ul { transform: translateX(0); }
+
+  /* bigger tap targets */
+  .nav a { font-size: 1.25rem; }
+}
+
+/* === MOBILE-ONLY (≤480 px) — you already have this block */
+@media (max-width: 480px) {
+
+  /* …your other mobile rules… */
+
+  /* ▼ paste ONE of these two snippets ▼ */
+
+  /* 1) Keep 100-px bar, move panel lower */
+  .nav ul { top: 100px; }
+
+  /* —----  OR  —---- */
+
+  /* 2) Shorten bar & logo, keep panel aligned */
+  .nav        { height: 60px; }
+  .nav-logo   { height: 48px; width: auto; }
+  .nav ul     { top: 60px; }
+}
+/* ===== override: keep logo size the same even when scrolled ===== */
+.nav.scrolled .nav-logo {
+  width: 48px;      /* same as the normal navbar */
+  height: auto;      /* preserves its aspect ratio */
+}

@@ -187,3 +187,62 @@ body {
     font-weight: 700;
     color:#22d6ff;
   }
+
+  /* ─────────  TABLET BREAKPOINT  (≤ 768 px)  ───────── */
+@media (max-width: 768px) {
+
+  /* Hero layout & spacing */
+  .hero-section            { padding: 2rem 1.5rem; }
+  .box-container           { padding: 1.5rem; max-width: 90%; }
+
+  /* Headings scale-down */
+  header h1                { font-size: clamp(4.5rem, 10vw, 6rem); }
+  .hero-section h1         {
+    font-size: clamp(3.2rem, 9vw, 4.5rem);
+    white-space: normal;              /* let text wrap */
+    width: auto;                      /* undo the “typewriter” width lock */
+    animation: none;                  /* optional: stop the typing effect */
+  }
+
+  /* Body copy */
+  .hero-section p          { font-size: 1.05rem; max-width: 90%; }
+  .content-section         { padding: 2.5rem 2rem; }
+  .content-section h2      { font-size: 2.1rem; }
+  .content-section h3      { font-size: 1.2rem; }
+  .content-section p,
+  .content-section li      { font-size: 1rem; }
+
+  /* Reduce giant gradients for smoother scrolling */
+  .hero-section            { background-position: center; }
+}
+
+/* ─────────  PHONE BREAKPOINT  (≤ 480 px)  ───────── */
+@media (max-width: 480px) {
+
+  /* More compact hero */
+  .hero-section            {
+    min-height: 90vh;             /* shorten a bit for tiny screens */
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+
+  /* Typographic tweaks */
+  header h1                { font-size: 3.8rem; }
+  .hero-section h1         {
+    font-size: 2.8rem;
+    -webkit-text-stroke-width: .8px;
+  }
+  .hero-section p          { font-size: .95rem; }
+
+  /* Content block */
+  .content-section         { padding: 2rem 1.25rem; border-radius: 0; }
+  .content-section h2      { font-size: 1.7rem; }
+  .content-section h3      { font-size: 1.1rem; margin: 1.8rem 0 .8rem; }
+
+  /* Grid list stacks vertically */
+  .content-section ul      { display: block; }
+  .content-section li      { margin-bottom: 1rem; }
+
+  /* Box container full-width for cleaner look */
+  .box-container           { max-width: 100%; padding: 1.4rem; }
+}
