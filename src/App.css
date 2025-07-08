@@ -579,7 +579,17 @@ margin-right: auto;
 @media (max-width: 1024px) {
 
   /* headline size */
-  .hero-section-title { font-size: 3.2rem; }  /* keeps the tiny title */
+  .hero-section-title {
+    /* turn OFF the gradient & stroke */
+    background-image: none;          /* no flashy mask               */
+    -webkit-text-stroke-width: 0;    /* remove outline               */
+    -webkit-text-stroke-color: none; /* tidy                          */
+    background-clip: border-box;     /* reset clip                   */
+    mix-blend-mode: normal;          /* normal rendering             */
+
+    /* pick a solid colour you like */
+    color: #ffffff;                  /* e.g. white on dark background */
+  }
 
   /* general typography */
   .revamp-title,
