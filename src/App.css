@@ -574,3 +574,40 @@ margin-right: auto;
   .mask-left.mobile-animate  { animation: none-angled-left 1s forwards;  }
   .mask-right.mobile-animate { animation: none-angled-right 1s forwards; }
 }
+
+/* Phone + Tablet  (≤ 1024 px)  — all the small-screen rules */
+@media (max-width: 1024px) {
+
+  /* headline size */
+  .hero-section-title { font-size: 3.2rem; }  /* keeps the tiny title */
+
+  /* general typography */
+  .revamp-title,
+  .mission-section h2,
+  .consultation-section h2 { font-size: 2rem; }
+
+  .mission-section p,
+  .consultation-section p,
+  .revamp-copy { font-size: 1rem; }
+
+  /* spacing */
+  .mission-section,
+  .consultation-section,
+  .revamp-section { padding: 4rem 1rem; min-height: auto; }
+
+  /* layout */
+  .services-container,
+  .services-title-container { flex-direction: column; gap: 1.5rem; }
+
+  .service { flex: 1 1 100%; }
+
+  /* buttons */
+  .modern-button,
+  .modern-button1,
+  .modern-button2 { width: 80%; }
+
+  /* decorative */
+  .triangle { width: 250%; }
+  .mask     { height: 180%; }
+  .revamp-section { height: 38rem; }
+}
